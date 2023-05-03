@@ -1,0 +1,131 @@
+main
+config.py
+
+from utils import read_setting (setting.py) 
+-setting in yaml or json format
+
+
+from data import Generator=> (generate dataset)
+
+
+PhysicalNetwork
+
+
+From .physical_network import PhysicalNetwork (data/)
+from .virtual_network_request_simulator import 
+VirtualNetworkRequestSimulator (data/)
+
+=====================================================in RL sequentiel data ( i can take qst from my tp(RL), to desribe the data)
+
+GRU : capture temporal dependencies between inputs with maintaining a hidden state each step
+
+
+i have a question , the  GRU method can be used in Reinfocement learning problem since in reinfoctemet learning the data considred is sequentiel ( state at t then state at t+1)?
+
+Yes, GRU (Gated Recurrent Unit) methods can be used in reinforcement learning problems where the data is sequential, such as in the case of a Markov decision process (MDP) where the state at time t depends on the state at time t-1 and the action taken at time t-1.
+
+In reinforcement learning, the agent learns to make decisions based on the current state and a long-term reward signal. The agent's decisions affect the subsequent state and reward, creating a sequence of states and actions over time.
+
+GRU-based models can be used to capture the temporal dependencies in these sequences and make predictions or decisions based on them. For example, a GRU-based model can be used as a function approximator for the Q-value function in Q-learning or as a policy network in policy gradient methods.
+
+The use of GRU-based models in reinforcement learning can improve the agent's ability to learn and adapt to changing environments, and can lead to better performance on tasks that involve sequential decision making. However, the choice of the specific architecture and hyperparameters of the model should be carefully tuned to the problem at hand.
+ChatGPT Mar 23 Version. Free Research Preview. ChatGPT may produce inaccurate information about people, places, or facts.
+=============================================================================================================================
+
+
+GRU , GNN
+
+
+===========================================================
+
+
+nombre virtual link v_sim_setting_num_v_nets=1000 in config
+
+state : instance , next instance
+
+instance :{'v_net': <data.virtual_network.VirtualNetwork object at 0x7fcf3af41660>, 'p_net': <data.physical_network.PhysicalNetwork object at 0x7fcf3af40430>} False {'v_net_count': 477, 'success_count': 443, 'inservice_count': 30, 'total_revenue': 161896, 'total_cost': 320356, 'total_r2c': 0.505362783902908, 'total_time_revenue': 152296297.86514536, 'total_time_cost': 299333230.45431715, 'num_running_p_net_nodes': 99, 'event_id': 919, 'event_type': 1, 'event_time': 12035.0, 'p_net_available_resource': 24434, 'p_net_node_available_resource': 3764, 'p_net_link_available_resource': 20670, 'p_net_node_resource_utilization': 0.49893503727369537, 'p_net_link_resource_utilization': 0.4706515058389674, 'v_net_id': 476, 'v_net_lifetime': 113.24356601758542, 'v_net_arrival_time': 12035.0, 'v_net_num_nodes': 3, 'v_net_num_egdes': 2, 'result': True, 'node_slots': {1: 34, 2: 25, 0: 96}, 'link_paths': {(0, 1): [(96, 50), (50, 34)], (1, 2): [(34, 57), (57, 85), (85, 25)]}, 'node_slots_info': {(1, 34): {'cpu': 11}, (2, 25): {'cpu': 50}, (0, 96): {'cpu': 15}}, 'link_paths_info': {((0, 1), (96, 50)): {'bw': 45}, ((0, 1), (50, 34)): {'bw': 45}, ((1, 2), (34, 57)): {'bw': 46}, ((1, 2), (57, 85)): {'bw': 46}, ((1, 2), (85, 25)): {'bw': 46}}, 'v_net_cost': 304, 'v_net_revenue': 167, 'v_net_demand': 152, 'v_net_node_demand': 76, 'v_net_link_demand': 91, 'v_net_node_revenue': 76, 'v_net_link_revenue': 91, 'v_net_node_cost': 76, 'v_net_link_cost': 228, 'v_net_path_cost': 137, 'v_net_r2c_ratio': 0.5493421052631579, 'v_net_time_cost': 34426.04406934597, 'v_net_time_revenue': 18911.675524936767, 'v_net_time_rc_ratio': 62.20945896360778, 'description': 'Success', 'total_violation': 0.0, 'current_violation': 0.0, 'total_place_violation': 0.0, 'total_route_violation': 0.0, 'place_result': True, 'route_result': True, 'early_rejection': False, 'revoke_times': 0, 'selected_actions': [], 'num_placed_nodes': 3, 'num_routed_links': 2}
+
+
+
+________________solution_____________ {'current_violation': 0.0,
+ 'description': '',
+ 'early_rejection': False,
+ 'link_paths': {(0, 1): [(7, 64), (64, 41)],
+                (0, 2): [(7, 2), (2, 48), (48, 18)],
+                (0, 4): [(7, 90),
+                         (90, 61),
+                         (61, 28),
+                         (28, 79),
+                         (79, 95),
+                         (95, 27)],
+                (1, 3): [(41, 2), (2, 49), (49, 26)],
+                (1, 4): [(41, 17), (17, 55), (55, 3), (3, 27)],
+                (2, 3): [(18, 26)],
+                (2, 4): [(18, 27)]},
+ 'link_paths_info': {((0, 1), (7, 64)): {'bw': 36},
+                     ((0, 1), (64, 41)): {'bw': 36},
+                     ((0, 2), (2, 48)): {'bw': 47},
+                     ((0, 2), (7, 2)): {'bw': 47},
+                     ((0, 2), (48, 18)): {'bw': 47},
+                     ((0, 4), (7, 90)): {'bw': 32},
+                     ((0, 4), (28, 79)): {'bw': 32},
+                     ((0, 4), (61, 28)): {'bw': 32},
+                     ((0, 4), (79, 95)): {'bw': 32},
+                     ((0, 4), (90, 61)): {'bw': 32},
+                     ((0, 4), (95, 27)): {'bw': 32},
+                     ((1, 3), (2, 49)): {'bw': 5},
+                     ((1, 3), (41, 2)): {'bw': 5},
+                     ((1, 3), (49, 26)): {'bw': 5},
+                     ((1, 4), (3, 27)): {'bw': 16},
+                     ((1, 4), (17, 55)): {'bw': 16},
+                     ((1, 4), (41, 17)): {'bw': 16},
+                     ((1, 4), (55, 3)): {'bw': 16},
+                     ((2, 3), (18, 26)): {'bw': 2},
+                     ((2, 4), (18, 27)): {'bw': 1}},
+ 'node_slots': {0: 7, 1: 41, 2: 18, 3: 26, 4: 27},
+ 'node_slots_info': {(0, 7): {'cpu': 38},
+                     (1, 41): {'cpu': 39},
+                     (2, 18): {'cpu': 0},
+                     (3, 26): {'cpu': 41},
+                     (4, 27): {'cpu': 33}},
+ 'place_result': True,
+ 'result': True,
+ 'revoke_times': 0,
+ 'route_result': True,
+ 'selected_actions': [],
+ 'total_place_violation': 0.0,
+ 'total_route_violation': 0.0,
+ 'total_violation': 0.0,
+ 'v_net_arrival_time': 14072.0,
+ 'v_net_cost': 0,
+ 'v_net_demand': 0,
+ 'v_net_id': 559,
+ 'v_net_lifetime': 303.1497860184611,
+ 'v_net_link_cost': 0,
+ 'v_net_link_demand': 0,
+ 'v_net_link_revenue': 0,
+ 'v_net_node_cost': 0,
+ 'v_net_node_demand': 0,
+ 'v_net_node_revenue': 0,
+ 'v_net_num_egdes': 7,
+ 'v_net_num_nodes': 5,
+ 'v_net_path_cost': 0,
+ 'v_net_r2c_ratio': 0,
+ 'v_net_revenue': 0,
+ 'v_net_time_cost': 0,
+ 'v_net_time_rc_ratio': 0,
+ 'v_net_time_revenue': 0}
+<base.solution.Solution object at 0x7fcf38bb2080>
+
+
+___________________ENV_____________________
+
+classe mère SubRLEnv
+
+=======================
+            reward = solution['v_net_r2c_ratio']
+
+============================SOLVER A3c rl===================================
+
+
+reward = solution['v_net_r2c_ratio']

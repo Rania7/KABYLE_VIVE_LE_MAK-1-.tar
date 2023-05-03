@@ -1,0 +1,3 @@
+<base.solution.Solution object at 0x7f186bc49fc0>
+<solver.learning.buffer.RolloutBuffer object at 0x7f18700c1840>
+tensor([0.1616])
